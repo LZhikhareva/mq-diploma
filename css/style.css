@@ -160,8 +160,7 @@ a {
 }
 
 .trends-box {
-    max-width: 1660px;
-    margin: 0 auto;
+    max-width: 100%;
 
 
 }
@@ -195,7 +194,6 @@ a {
     display: flex;
     width: 100%;
 
-    justify-content: space-between;
     gap: var(--gap-trends-item);
 }
 
@@ -204,7 +202,7 @@ a {
     flex-direction: column;
     position: relative;
     text-transform: uppercase;
-    width: calc((100% / 4) - (3 * var(--gap-trends-item)));
+    width: calc((100% - (3 * var(--gap-trends-item))) / 4);
     min-height: 320px;
     box-sizing: border-box;
 
@@ -482,7 +480,7 @@ a {
     padding-right: 5px;
     background: #f4f7f6;
 
-    opacity: 0.541;d
+    opacity: 0.541;
     font-size: 13px;
     color: #000000;
     font-weight: 400;
@@ -645,7 +643,6 @@ a {
     color: #0f0d0e;
     font-weight: 700;
     text-align: center;
-    vertical-align: middle;
     padding: 5px 13px 5px 13px;
 }
 
@@ -685,8 +682,12 @@ a {
     margin-left: 3px;
 }
 
+
+
 .products-box {
-    max-width: 1660px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -718,23 +719,25 @@ a {
 .products-list {
     display: flex;
     max-width: 1170px;
-    gap: 60px;
-    justify-content: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: stretch;
 }
 
 .product-item {
     display: flex;
     flex-direction: column;
 
-    max-width: calc((100% - (60px * 2)) / 3);
+    max-width: calc((100% - (80px * 2)) / 3);
+    flex-grow: 1;
 }
 
 .product-image {
-    max-width: 300px;
-}
-
-.product-image {
-    margin-left: 30px;
+    display: flex;
+    flex-grow: 1;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .product-info {
@@ -742,9 +745,10 @@ a {
     flex-direction: column;
     outline-color: #d3c59d;
     outline-style: solid;
-    padding: 50px 15px 15px;
+    padding: 50px 15px 20px 15px;
     margin-top: -35px;
-    width: 100%;
+    max-width: 95%;
+    flex-grow: 1;
 }
 
 .product-title {
@@ -756,8 +760,6 @@ a {
 }
 
 .product-description {
-    max-width: 301px;
-    height: 63px;
     font-size: 15px;
     line-height: 22px;
     color: #0f0d0e;
@@ -765,15 +767,11 @@ a {
     text-align: justify;
 }
 
-.product-description:hover {
-    height: 54px;
-
-}
-
 .price-and-button1 {
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+
+    margin-top: 45px;
 }
 
 .price-and-button2 {
@@ -785,7 +783,7 @@ a {
 .price-and-button3 {
     display: flex;
     justify-content: space-between;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 .old-price {
@@ -822,6 +820,9 @@ a {
     background-color: #323232;
 }
 
+.product-item4 {
+    display: none;
+}
 
 .footer {
     width: 100%;
@@ -932,19 +933,21 @@ a {
         display: block;
     }
 
+    .container {
+        width: 100%;
+    }
+
     .content-container {
-        max-width: 769px;
+        width: 90.9%;
         padding: 63px 30px 0 30px;
         margin: 0 auto;
     }
 
     .main-container {
         margin-right: 35px;
+        flex-grow: 1;
     }
 
-    .posts-list {
-        max-width: 399px;
-    }
 
     .trends-box {
         max-width: 1200px;
@@ -956,6 +959,7 @@ a {
         flex-wrap: wrap;
         width: 100%;
         gap: 2px;
+        justify-content: space-between;
     }
 
     .trends-item {
@@ -966,6 +970,10 @@ a {
         display: flex;
         flex-direction: column;
         margin-bottom: 40px;
+    }
+
+    .post-box>a {
+        display: flex;
     }
 
     .post-box::after {
@@ -983,31 +991,62 @@ a {
         flex-grow: 1;
     }
 
-    .post-text {
+    .post-image {
+        display: flex;
         flex-grow: 1;
     }
 
-    .products-box {
-        max-width: 760px;
-        padding-right: 37px;
-        padding-left: 37px;
+    .post-text {
+        flex-grow: 1;
+        margin-top: 20px;
+    }
 
+    .categories {
+        margin-top: 10px;
+    }
+
+    .side-bar {
+        min-width: 271px;
+    }
+
+    .products-box {
+        max-width: 100%;
     }
 
     .products-list {
         display: flex;
         flex-wrap: wrap;
-        max-width: 760px;
+        max-width: 90.9%;
         gap: 25px;
+        margin: 0 auto;
         justify-content: space-between;
+        align-items: stretch;
     }
 
     .product-item {
-        max-width: calc((100% - 25px) / 2);
+        max-width: calc((90.9% - 25px) / 2);
+        flex-grow: 1;
+    }
+
+    .price-and-button1 {
+        margin-top: 46px;
+    }
+
+    .product-image>a {
+        display: flex;
     }
 
     .product-image {
-        max-width: 295px;
+        display: flex;
+        max-width: 90%;
+    }
+
+    .product-info {
+        width: 95%;
+    }
+
+    .products-box {
+        width: 100%;
     }
 
     .footer-container {
@@ -1031,11 +1070,11 @@ a {
     .header {
         background-image: url(../images/banner-mobile.jpg);
         width: 100%;
+        min-height: 640px;
     }
 
     .header-container {
         position: relative;
-        max-width: 100%;
         display: flex;
         margin: 0 auto;
         justify-content: space-between;
@@ -1048,14 +1087,15 @@ a {
 
     .header-logo {
         position: absolute;
-        top: 222px;
-        left: 50px;
+        top: 180px;
+        left: 10%;
+        margin: 0 auto;
         width: 80%;
     }
 
     .header-title {
-        width: 328px;
-        height: 384px;
+        width: 90%;
+        margin-top: 40px;
         font-size: 26px;
         line-height: 36px;
         text-transform: uppercase;
@@ -1115,6 +1155,9 @@ a {
         gap: 2px;
     }
 
+    .trends-list-header {
+        padding-right: 50px;
+    }
 
     .trends-item {
         width: 100%;
@@ -1122,7 +1165,7 @@ a {
 
     .content-container {
         max-width: 100%;
-        padding: 40px 14px 0 14px;
+        padding: 60px 14px 0 14px;
         margin: 0 auto;
 
         display: flex;
@@ -1135,18 +1178,24 @@ a {
 
     .posts-list {
         margin: 0 auto;
-        max-width: 327px;
+        max-width: 100%;
     }
+
 
     .post-box {
         display: flex;
         flex-direction: column;
         margin-bottom: 40px;
-        max-width: 327px;
+        width: 100%;
+    }
+
+    .post-box>a {
+        display: flex;
     }
 
     .post-image {
-        max-width: 327px;
+        max-width: 100%;
+        flex-grow: 1;
     }
 
     .post-info {
@@ -1158,43 +1207,54 @@ a {
 
     .post-text {
         flex-grow: 1;
+        margin-top: 20px;
+    }
+
+    .categories {
+        margin-top: 10px;
     }
 
     .post-box::after {
         content: " ";
         display: block;
-        width: 327px;
+        width: 100%;
         height: 3px;
         background-color: #eeeeee;
     }
 
     .side-bar {
-        width: 327px;
+        width: 100%;
         margin: 0 auto;
     }
 
-    .products-box {
-        width: 327px;
+    .new-posts-box-header {
+        padding-top: 40px;
     }
 
     .products-box {
-        max-width: 327px;
-        margin: 0 auto;
+        width: 100%;
     }
 
     .products-list {
         display: flex;
         flex-wrap: wrap;
-        max-width: 327px;
+        max-width: 92%;
+        margin: 0 auto;
         gap: 25px;
     }
 
+    .products-list-header {
+        padding-right: 50px;
+    }
+
     .product-item {
-        max-width: 100%;
+        max-width: 92%;
+        flex-grow: 1;
+        margin: 0 auto;
     }
 
     .product-image {
-        max-width: 285px;
+        max-width: 90%;
     }
 
     .product-info {
@@ -1202,9 +1262,13 @@ a {
         flex-direction: column;
         outline-color: #d3c59d;
         outline-style: solid;
-        padding: 50px 10px 10px;
+        padding: 50px 10px 10px 10px;
         margin-top: -35px;
-        width: 100%;
+        max-width: 95%;
+    }
+
+    .product-item4 {
+        display: none;
     }
 
     .footer-container {
@@ -1224,8 +1288,9 @@ a {
 
 
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+
     .trends-item {
-        width: calc((100% / 4) - (3 * var(--gap-trends-item)));
+        width: calc((100% - 15px) / 4);
     }
 }
 
@@ -1238,7 +1303,7 @@ a {
         margin: 0 auto;
     }
 
-       .trends-list {
+    .trends-list {
         display: flex;
         flex-wrap: wrap;
         width: 100%;

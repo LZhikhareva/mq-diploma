@@ -944,10 +944,12 @@ a {
     }
 
     .main-container {
+        display: flex;
+
         margin-right: 35px;
         flex-grow: 1;
-    }
 
+    }
 
     .trends-box {
         max-width: 1200px;
@@ -974,12 +976,13 @@ a {
 
     .post-box>a {
         display: flex;
+        flex-grow: 1;
     }
 
     .post-box::after {
         content: " ";
         display: block;
-        width: 392px;
+        width: 100%;
         height: 3px;
         background-color: #eeeeee;
     }
@@ -993,6 +996,7 @@ a {
 
     .post-image {
         display: flex;
+        width: 100%;
         flex-grow: 1;
     }
 
@@ -1038,7 +1042,6 @@ a {
 
     .product-image {
         display: flex;
-        max-width: 90%;
     }
 
     .product-info {
